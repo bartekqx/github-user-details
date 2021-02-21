@@ -33,5 +33,12 @@
             <artifactId>app</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- Util -->
+        <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>

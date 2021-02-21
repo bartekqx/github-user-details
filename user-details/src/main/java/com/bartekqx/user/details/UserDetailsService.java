@@ -19,7 +19,7 @@ public class UserDetailsService {
     }
 
     /**
-     * Here anotherp possibility was to have 'calculations' field of type #BigDecimal
+     * Here another possibility was to have 'calculations' field of type #BigDecimal
      * For simplicity I assumed double is enough, and ideal precision is not needed
      */
     private GithubUser performCalculations(GithubUser githubUser) {

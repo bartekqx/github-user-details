@@ -4,11 +4,11 @@ import com.bartekqx.config.BaseIntegrationTest;
 import com.bartekqx.user.store.UserEntity;
 import com.bartekqx.user.store.UserRepository;
 import com.bartekqx.users.api.v1.GithubUserDetailsDto;
+import io.vavr.control.Option;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MvcResult;
 
-import java.util.Optional;
 import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -56,8 +56,8 @@ public class GithubUserDetailsTest extends BaseIntegrationTest {
                 .andReturn();
 
         //then
-        Optional<UserEntity> userEntity = userRepository.findByLogin(login);
+        Option<UserEntity> userEntity = userRepository.findByLogin(login);
 
-        assertThat(userEntity.isPresent()).isFalse();
+        assertThat(userEntity.isDefined()).isFalse();
     }
 }

@@ -2,7 +2,6 @@ package com.bartekqx.user.store;
 
 import com.bartekqx.user.details.UserStore;
 import com.bartekqx.user.details.GithubUser;
-import io.vavr.control.Option;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +13,9 @@ class UserService implements UserStore {
 
     @Override
     public void save(final GithubUser githubUser) {
-        final UserEntity entity = Option.ofOptional(userRepository.findByLogin(githubUser.getLogin()))
+        final UserEntity entity = (userRepository.findByLogin(githubUser.getLogin())
                 .map(this::updateCounter)
-                .getOrElse(() -> new UserEntity(githubUser.getLogin(), 1L));
+                .getOrElse(() -> new UserEntity(githubUser.getLogin(), 1L)));
         userRepository.save(entity);
     }
 

@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class GithubUserDto implements Serializable {
+class GithubUserDto implements Serializable {
     private long id;
     private String login;
     private String name;
