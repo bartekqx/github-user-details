@@ -1,5 +1,6 @@
 package com.bartekqx.user.details;
 
+import com.bartekqx.test.util.TestTags;
 import io.vavr.control.Option;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-@Tag("unit")
+@Tag(TestTags.UNIT)
 public class UserDetailsServiceTest {
 
     private final UserStore userStore = Mockito.mock(UserStore.class);

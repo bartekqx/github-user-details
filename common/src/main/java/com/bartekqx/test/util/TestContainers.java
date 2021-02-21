@@ -1,4 +1,4 @@
-package com.bartekqx.config;
+package com.bartekqx.test.util;
 
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;

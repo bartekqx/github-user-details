@@ -1,5 +1,6 @@
 package com.bartekqx.github.api;
 
+import com.bartekqx.test.util.TestTags;
 import com.bartekqx.user.details.GithubUser;
 import io.vavr.control.Option;
 import org.junit.jupiter.api.Tag;
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 
-@Tag("unit")
+@Tag(TestTags.UNIT)
 public class GithubRestApiClientTest {
 
     private RestTemplate restTemplate = Mockito.mock(RestTemplate.class);

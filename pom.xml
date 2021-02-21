@@ -13,6 +13,7 @@
         <module>component-tests</module>
         <module>api</module>
         <module>db</module>
+        <module>common</module>
     </modules>
 
     <parent>
@@ -78,6 +79,11 @@
             <dependency>
                 <groupId>com.bartekqx</groupId>
                 <artifactId>db</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bartekqx</groupId>
+                <artifactId>common</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

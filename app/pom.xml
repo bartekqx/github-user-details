@@ -32,6 +32,10 @@
             <groupId>com.bartekqx</groupId>
             <artifactId>db</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.bartekqx</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

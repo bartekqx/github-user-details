@@ -11,4 +11,27 @@
 
     <artifactId>integration-tests</artifactId>
 
+    <dependencies>
+        <!-- Modules -->
+        <dependency>
+            <groupId>com.bartekqx</groupId>
+            <artifactId>user-store</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.bartekqx</groupId>
+            <artifactId>api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.bartekqx</groupId>
+            <artifactId>common</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.bartekqx</groupId>
+            <artifactId>app</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>

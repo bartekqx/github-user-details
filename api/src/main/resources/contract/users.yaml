@@ -29,8 +29,6 @@ paths:
       responses:
         200:
           $ref: '#/components/responses/GithubUserDetailsResponse'
-        400:
-          description: Bad Request
         404:
           description: NotFound
         500:

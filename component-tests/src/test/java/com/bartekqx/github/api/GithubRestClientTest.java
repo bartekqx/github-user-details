@@ -29,7 +29,5 @@ public class GithubRestClientTest extends BaseComponentTest {
         assertThat(dto.getCreatedAt()).isNotNull();
         assertThat(dto.getId()).isNotNull();
         assertThat(dto.getType()).isNotNull();
-        assertThat(dto.getUpdatedAt()).isNotNull();
-        assertThat(dto.getCreatedAt()).isNotNull();
     }
 }

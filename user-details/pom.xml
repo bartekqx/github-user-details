@@ -12,6 +12,11 @@
     <artifactId>user-details</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>com.bartekqx</groupId>
+            <artifactId>common</artifactId>
+            <scope>test</scope>
+        </dependency>
         <!-- Util -->
         <dependency>
             <groupId>io.vavr</groupId>

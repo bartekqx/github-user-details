@@ -17,6 +17,10 @@
             <groupId>com.bartekqx</groupId>
             <artifactId>user-details</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.bartekqx</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
 
         <!-- Spring -->
         <dependency>
