@@ -28,6 +28,10 @@
             <groupId>com.bartekqx</groupId>
             <artifactId>api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.bartekqx</groupId>
+            <artifactId>db</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

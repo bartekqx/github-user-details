@@ -2,6 +2,9 @@ spring:
   application:
     name: github-user-details
 
+  liquibase:
+    change-log: classpath:liquibase/changelog/changelog-master.xml
+    contexts: test
 github:
   user:
     url: https://api.github.com/users/{login}
