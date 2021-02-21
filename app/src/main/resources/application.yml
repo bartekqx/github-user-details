@@ -7,6 +7,20 @@ spring:
   liquibase:
     change-log: classpath:liquibase/changelog/changelog-master.xml
     contexts: test
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/github-user-details
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: none
+      show-sql: true
+    properties:
+      order_inserts: true
+      order_updates: true
+      jdbs:
+        batch_size: 30
 github:
   user:
     url: https://api.github.com/users/{login}
