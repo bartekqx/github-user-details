@@ -21,4 +21,7 @@ public class GithubUserDto implements Serializable {
     private String createdAt;
     @JsonProperty(value = "updated_at")
     private String updatedAt;
+    @JsonProperty(value = "public_repos")
+    private long publicRepos;
+    private long followers;
 }

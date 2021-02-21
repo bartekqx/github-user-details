@@ -1,7 +1,7 @@
 package com.bartekqx.user.store;
 
 import com.bartekqx.user.details.UserStore;
-import com.bartekqx.user.details.model.GithubUser;
+import com.bartekqx.user.details.GithubUser;
 import io.vavr.control.Option;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

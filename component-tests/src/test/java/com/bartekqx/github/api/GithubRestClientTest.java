@@ -1,7 +1,7 @@
 package com.bartekqx.github.api;
 
 import com.bartekqx.config.BaseComponentTest;
-import com.bartekqx.user.details.model.GithubUser;
+import com.bartekqx.user.details.GithubUser;
 import io.vavr.control.Option;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

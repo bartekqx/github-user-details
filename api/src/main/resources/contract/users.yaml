@@ -31,22 +31,10 @@ paths:
           $ref: '#/components/responses/GithubUserDetailsResponse'
         400:
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
         404:
           description: NotFound
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
         500:
           description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
 components:
   parameters:
     login:
@@ -103,19 +91,6 @@ components:
           example: 6.75
           type: number
           format: double
-
-    Error:
-      type: object
-      properties:
-        errorCode:
-          type: string
-          description: Optional error code for reporting purposes.
-        errorId:
-          type: string
-          description: Unique UUID for audit purposes.
-        errorDescription:
-          type: string
-          description: The description of the error.
   securitySchemes:
     UserSecurity:
       type: http

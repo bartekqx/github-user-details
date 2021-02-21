@@ -1,7 +1,7 @@
 package com.bartekqx.user.store;
 
 import com.bartekqx.config.BaseComponentTest;
-import com.bartekqx.user.details.model.GithubUser;
+import com.bartekqx.user.details.GithubUser;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -57,7 +57,9 @@ public class UserServiceTest extends BaseComponentTest {
                 "url..",
                 LocalDateTime.now().toString(),
                 LocalDateTime.now().toString(),
-                0L
+                10,
+                10,
+                0.0
         );
     }
 }

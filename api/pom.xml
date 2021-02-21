@@ -17,6 +17,12 @@
     </properties>
 
     <dependencies>
+        <!-- Modules -->
+        <dependency>
+            <groupId>com.bartekqx</groupId>
+            <artifactId>user-details</artifactId>
+        </dependency>
+
         <!-- API gen -->
         <dependency>
             <groupId>io.swagger.core.v3</groupId>

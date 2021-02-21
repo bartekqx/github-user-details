@@ -1,6 +1,5 @@
-package com.bartekqx.user.details.api;
+package com.bartekqx.user.details;
 
-import com.bartekqx.user.details.model.GithubUser;
 import io.vavr.control.Option;
 
 public interface GithubApiClient {

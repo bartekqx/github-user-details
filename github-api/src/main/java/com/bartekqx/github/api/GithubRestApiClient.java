@@ -1,7 +1,7 @@
 package com.bartekqx.github.api;
 
-import com.bartekqx.user.details.api.GithubApiClient;
-import com.bartekqx.user.details.model.GithubUser;
+import com.bartekqx.user.details.GithubApiClient;
+import com.bartekqx.user.details.GithubUser;
 import io.vavr.control.Option;
 import io.vavr.control.Try;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +25,7 @@ class GithubRestApiClient implements GithubApiClient {
                 .getOrElse(Option::none);
     }
 
-    private GithubUser map(GithubUserDto response) {
+    private GithubUser map(final GithubUserDto response) {
         return new GithubUser(
                 response.getId(),
                 response.getLogin(),
@@ -34,7 +34,9 @@ class GithubRestApiClient implements GithubApiClient {
                 response.getAvatarUrl(),
                 response.getCreatedAt(),
                 response.getUpdatedAt(),
-                0
+                response.getFollowers(),
+                response.getPublicRepos(),
+                0.0
         );
     }
 }

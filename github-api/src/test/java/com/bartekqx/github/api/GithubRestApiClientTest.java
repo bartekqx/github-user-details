@@ -1,6 +1,6 @@
 package com.bartekqx.github.api;
 
-import com.bartekqx.user.details.model.GithubUser;
+import com.bartekqx.user.details.GithubUser;
 import io.vavr.control.Option;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -65,7 +65,9 @@ public class GithubRestApiClientTest {
                 "User",
                 "url..",
                 LocalDateTime.now().toString(),
-                LocalDateTime.now().toString()
+                LocalDateTime.now().toString(),
+                5,
+                6
         );
     }
 }
