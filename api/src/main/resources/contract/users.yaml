@@ -28,7 +28,6 @@ paths:
         - $ref: '#/components/parameters/login'
       responses:
         200:
-          description: ''
           $ref: '#/components/responses/GithubUserDetailsResponse'
         400:
           description: Bad Request
@@ -60,7 +59,7 @@ components:
         type: string
 
   responses:
-    GithubUserDetailsDto:
+    GithubUserDetailsResponse:
       description: ''
       content:
         application/json:

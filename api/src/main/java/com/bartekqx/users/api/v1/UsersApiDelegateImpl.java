@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class UsersApiDelegateImpl implements UsersApiDelegate {
 
     @Override
-    public ResponseEntity<Void> getGithubUserDetails(String login) {
+    public ResponseEntity<GithubUserDetailsDto> getGithubUserDetails(String login) {
         return null;
     }
 }
