@@ -20,9 +20,9 @@ paths:
     get:
       summary: Retrieve Github user details
       description: |
-        Retrieves Github user details for given login.
+        Retrieves Github uses details for given login.
       tags:
-        - Github user
+        - users
       operationId: getGithubUserDetails
       parameters:
         - $ref: '#/components/parameters/login'
@@ -99,6 +99,11 @@ components:
           description: Last account update timestamp
           example: 2021-10-31T09:05:27Z
           type: string
+        calculations:
+          description: Custom calculations
+          example: 6.75
+          type: number
+          format: double
 
     Error:
       type: object
