@@ -222,6 +222,17 @@
                     <configuration>
                         <source>${java.version}</source>
                         <target>${java.version}</target>
+                        <compilerArgs>
+                            <compilerArg>
+                                -Amapstruct.defaultComponentModel=spring
+                            </compilerArg>
+                            <compilerArg>
+                                -Amapstruct.unmappedTargetPolicy=ERROR
+                            </compilerArg>
+                            <compilerArg>
+                                -Amapstruct.verbose=true
+                            </compilerArg>
+                        </compilerArgs>
                         <annotationProcessorPaths>
                             <path>
                                 <groupId>org.projectlombok</groupId>
@@ -241,18 +252,15 @@
                     <artifactId>liquibase-maven-plugin</artifactId>
                     <version>${liquibase.version}</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <excludedGroups>${exclude.categories}</excludedGroups>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
-
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <excludedGroups>${exclude.categories}</excludedGroups>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 
     <profiles>
@@ -278,6 +286,7 @@
                 <module>integration-tests</module>
             </modules>
             <properties>
+                <codegen.skip>true</codegen.skip>
                 <exclude.categories>unit, component</exclude.categories>
             </properties>
         </profile>
@@ -288,6 +297,12 @@
             </modules>
             <properties>
                 <exclude.categories>unit, integration</exclude.categories>
+            </properties>
+        </profile>
+        <profile>
+            <id>all</id>
+            <properties>
+                <exclude.categories></exclude.categories>
             </properties>
         </profile>
     </profiles>
