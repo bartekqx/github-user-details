@@ -9,6 +9,8 @@
         <module>github-api</module>
         <module>user-details</module>
         <module>app</module>
+        <module>integration-tests</module>
+        <module>component-tests</module>
     </modules>
 
     <parent>
@@ -53,6 +55,23 @@
                 <artifactId>app</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.bartekqx</groupId>
+                <artifactId>integration-tests</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bartekqx</groupId>
+                <artifactId>component-tests</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Utility -->
+            <dependency>
+                <groupId>io.vavr</groupId>
+                <artifactId>vavr</artifactId>
+                <version>0.10.3</version>
+            </dependency>
 
             <!-- Testing -->
             <dependency>
@@ -69,7 +88,7 @@
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
         <!-- Db -->
@@ -91,6 +110,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>
@@ -98,8 +128,13 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>postgresql</artifactId>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -136,5 +171,54 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <excludedGroups>${exclude.categories}</excludedGroups>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <exclude.categories>unit, integration, component</exclude.categories>
+            </properties>
+        </profile>
+        <profile>
+            <id>unit</id>
+            <properties>
+                <codegen.skip>true</codegen.skip>
+                <exclude.categories>integration, component</exclude.categories>
+            </properties>
+        </profile>
+        <profile>
+            <id>integration</id>
+            <modules>
+                <module>integration-tests</module>
+            </modules>
+            <properties>
+                <codegen.skip>true</codegen.skip>
+                <exclude.categories>unit, component</exclude.categories>
+            </properties>
+        </profile>
+        <profile>
+            <id>component</id>
+            <modules>
+                <module>component-tests</module>
+            </modules>
+            <properties>
+                <codegen.skip>true</codegen.skip>
+                <exclude.categories>unit, integration</exclude.categories>
+            </properties>
+        </profile>
+    </profiles>
 </project>

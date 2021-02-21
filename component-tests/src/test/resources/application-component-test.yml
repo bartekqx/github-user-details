@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: github-user-details
+
+github:
+  user:
+    url: https://api.github.com/users/{login}

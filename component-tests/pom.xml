@@ -9,25 +9,26 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>github-api</artifactId>
+    <artifactId>component-tests</artifactId>
 
     <dependencies>
         <!-- Modules -->
         <dependency>
             <groupId>com.bartekqx</groupId>
-            <artifactId>user-details</artifactId>
+            <artifactId>app</artifactId>
+            <scope>test</scope>
         </dependency>
 
-        <!-- Spring -->
+        <!-- Testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
-
-        <!-- Util -->
         <dependency>
-            <groupId>io.vavr</groupId>
-            <artifactId>vavr</artifactId>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
