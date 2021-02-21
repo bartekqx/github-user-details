@@ -1,0 +1,118 @@
+openapi: 3.0.1
+info:
+  title: Github user details
+  version: 0.0.1
+  description: |
+    Github user details API
+
+servers:
+  - url: http://localhost:8080
+
+security:
+  - UserSecurity: [ ]
+
+tags:
+  - name: Github user details
+    description: Github user details API.
+
+paths:
+  /github-user-details/api/v1/users/{login}:
+    get:
+      summary: Retrieve Github user details
+      description: |
+        Retrieves Github user details for given login.
+      tags:
+        - Github user
+      operationId: getGithubUserDetails
+      parameters:
+        - $ref: '#/components/parameters/login'
+      responses:
+        200:
+          description: ''
+          $ref: '#/components/responses/GithubUserDetailsResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        404:
+          description: NotFound
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  parameters:
+    login:
+      name: login
+      in: path
+      description: 'Github login'
+      required: true
+      example: "bartekqx"
+      schema:
+        type: string
+
+  responses:
+    GithubUserDetailsDto:
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GithubUserDetails'
+  schemas:
+    GithubUserDetails:
+      type: object
+      properties:
+        id:
+          description: User id
+          example: 518723
+          type: integer
+          format: int64
+        login:
+          description: User's login at github.com
+          example: bartekqx
+          type: string
+        name:
+          description: User name
+          example: Bartek
+          type: string
+        type:
+          description: User account type
+          example: User
+          type: string
+        avatarUrl:
+          description: Avatar url
+          example: https://avatars.githubusercontent.com/u/73738415?v=4
+          type: string
+        createdAt:
+          description: Account creation timestamp
+          example: 2020-10-31T09:05:27Z
+          type: string
+        updatedAt:
+          description: Last account update timestamp
+          example: 2021-10-31T09:05:27Z
+          type: string
+
+    Error:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          description: Optional error code for reporting purposes.
+        errorId:
+          type: string
+          description: Unique UUID for audit purposes.
+        errorDescription:
+          type: string
+          description: The description of the error.
+  securitySchemes:
+    UserSecurity:
+      type: http
+      scheme: basic

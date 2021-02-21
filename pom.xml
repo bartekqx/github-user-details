@@ -11,6 +11,7 @@
         <module>app</module>
         <module>integration-tests</module>
         <module>component-tests</module>
+        <module>api</module>
     </modules>
 
     <parent>
@@ -30,6 +31,7 @@
     <properties>
         <java.version>11</java.version>
         <testcontainers.version>1.15.1</testcontainers.version>
+        <swagger.codegen.version>3.0.24</swagger.codegen.version>
     </properties>
 
     <dependencyManagement>
@@ -64,6 +66,28 @@
                 <groupId>com.bartekqx</groupId>
                 <artifactId>component-tests</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bartekqx</groupId>
+                <artifactId>api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- API gen -->
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>2.1.6</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>2.0.1.Final</version>
             </dependency>
 
             <!-- Utility -->

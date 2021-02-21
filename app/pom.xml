@@ -24,6 +24,10 @@
             <groupId>com.bartekqx</groupId>
             <artifactId>user-store</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.bartekqx</groupId>
+            <artifactId>api</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
