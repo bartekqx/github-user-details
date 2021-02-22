@@ -2,6 +2,7 @@ version: "3.3"
 
 services:
   postgres:
+    container_name: postgres_db
     image: postgres:latest
     environment:
       - POSTGRES_USER=postgres
@@ -9,3 +10,16 @@ services:
       - POSTGRES_DB=github-user-details
     ports:
     - "0.0.0.0:5432:5432"
+  github-user-details:
+    image: 'github-user-details:latest'
+    container_name: github-user-details
+    build:
+      context: .
+    links:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres_db:5432/github-user-details
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    ports:
+      - 8080:8080

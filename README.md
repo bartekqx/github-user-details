@@ -1,4 +1,5 @@
 # github-user-details
 
 #Run by executing:
-#docker-compose up -d
+mvn clean package &&
+docker-compose up -d 
