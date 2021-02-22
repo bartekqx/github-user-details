@@ -1,15 +1,18 @@
 package com.bartekqx.user.store;
 
-import com.bartekqx.config.BaseComponentTest;
+import com.bartekqx.config.BaseIntegrationTest;
+import com.bartekqx.config.PostgresDbCleaner;
 import com.bartekqx.user.details.GithubUser;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class UserServiceTest extends BaseComponentTest {
+@ExtendWith(PostgresDbCleaner.class)
+public class UserServiceTest extends BaseIntegrationTest {
 
     @Autowired
     private UserService userService;

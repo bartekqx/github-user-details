@@ -1,6 +1,6 @@
 package com.bartekqx.github.api;
 
-import com.bartekqx.config.BaseComponentTest;
+import com.bartekqx.config.BaseIntegrationTest;
 import com.bartekqx.user.details.GithubUser;
 import io.vavr.control.Option;
 import org.junit.jupiter.api.Test;
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class GithubRestClientTest extends BaseComponentTest {
+public class GithubRestClientTest extends BaseIntegrationTest {
 
     @Autowired
     private GithubRestApiClient githubRestApiClient;

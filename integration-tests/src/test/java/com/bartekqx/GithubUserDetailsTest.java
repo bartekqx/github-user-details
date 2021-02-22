@@ -1,11 +1,13 @@
 package com.bartekqx;
 
 import com.bartekqx.config.BaseIntegrationTest;
+import com.bartekqx.config.PostgresDbCleaner;
 import com.bartekqx.user.store.UserEntity;
 import com.bartekqx.user.store.UserRepository;
 import com.bartekqx.users.api.v1.GithubUserDetailsDto;
 import io.vavr.control.Option;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MvcResult;
 
@@ -15,6 +17,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+@ExtendWith(PostgresDbCleaner.class)
 public class GithubUserDetailsTest extends BaseIntegrationTest {
 
     @Autowired

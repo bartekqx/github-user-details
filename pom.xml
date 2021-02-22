@@ -286,7 +286,6 @@
                 <module>integration-tests</module>
             </modules>
             <properties>
-                <codegen.skip>true</codegen.skip>
                 <exclude.categories>unit, component</exclude.categories>
             </properties>
         </profile>

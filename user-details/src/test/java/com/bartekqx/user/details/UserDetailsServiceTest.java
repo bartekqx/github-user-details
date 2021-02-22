@@ -36,7 +36,7 @@ public class UserDetailsServiceTest {
     }
 
     @Test
-    public void shouldCalculateZero() {
+    public void shouldCalculateZeroIfThereAreZeroFollowers() {
         //given
         GithubUser response = getGithubUserWithZeroFollowers();
 

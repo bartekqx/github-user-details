@@ -1,6 +1,5 @@
 package com.bartekqx.config;
 
-import com.bartekqx.test.util.TestContainers;
 import com.bartekqx.test.util.TestTags;
 import org.junit.jupiter.api.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
